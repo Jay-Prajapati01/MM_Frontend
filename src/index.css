@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Tailwind directives (must appear before any custom @layer usage) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Example CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Premium Society Management Design System */
+
+@layer base {
+  :root {
+    /* Enhanced Premium Society Color Palette */
+    --background: 36 39% 97%;
+    --foreground: 240 10% 15%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 15%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 15%;
+    
+    --primary: 240 10% 20%;
+    --primary-foreground: 36 39% 97%;
+    
+    --secondary: 45 60% 85%;
+    --secondary-foreground: 240 10% 15%;
+    
+    --muted: 36 25% 90%;
+    --muted-foreground: 240 8% 40%;
+    
+    --accent: 45 84% 75%;
+    --accent-foreground: 240 10% 15%;
+    
+    --destructive: 0 65% 51%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 36 30% 85%;
+    --input: 36 30% 88%;
+    --ring: 45 84% 65%;
+    
+    --radius: 1rem;
+    
+    /* Premium Color Palette */
+    --cream: 36 39% 97%;
+    --soft-gold: 45 84% 88%;
+    --soft-gold-dark: 45 84% 78%;
+    --charcoal: 240 10% 15%;
+    --sage-green: 120 20% 85%;
+    --sage-green-dark: 120 25% 75%;
+    
+    /* Glassmorphism */
+    --glass-bg: 0 0% 100% / 0.8;
+    --glass-border: 0 0% 100% / 0.2;
+    --glass-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--soft-gold)) 0%, hsl(var(--soft-gold-dark)) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(var(--cream)) 0%, hsl(var(--soft-gold)) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --shadow-glass: 0 8px 32px rgba(31, 38, 135, 0.37);
+    --shadow-hover: 0 8px 40px rgba(0, 0, 0, 0.12);
+    
+    /* Animation */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark theme base colors */
+    --background: 240 10% 8%;
+    --foreground: 36 39% 95%;
+
+    --card: 240 10% 12%;
+    --card-foreground: 36 39% 95%;
+
+    --popover: 240 10% 12%;
+    --popover-foreground: 36 39% 95%;
+
+    --primary: 36 39% 95%;
+    --primary-foreground: 240 10% 8%;
+
+    --secondary: 240 8% 20%;
+    --secondary-foreground: 36 39% 95%;
+
+    --muted: 240 8% 18%;
+    --muted-foreground: 36 20% 70%;
+
+    --accent: 240 8% 25%;
+    --accent-foreground: 36 39% 95%;
+
+    --destructive: 0 65% 60%;
+    --destructive-foreground: 240 10% 8%;
+
+    --border: 240 8% 20%;
+    --input: 240 8% 18%;
+    --ring: 45 84% 65%;
+
+    /* Dark theme premium colors */
+    --cream: 240 10% 8%;
+    --soft-gold: 45 84% 45%;
+    --soft-gold-dark: 45 84% 35%;
+    --charcoal: 36 39% 95%;
+    --sage-green: 120 20% 45%;
+    --sage-green-dark: 120 25% 35%;
+
+    /* Dark glassmorphism */
+    --glass-bg: 240 10% 12% / 0.8;
+    --glass-border: 240 10% 25% / 0.3;
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+
+    /* Dark gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(45 84% 35%) 0%, hsl(45 84% 25%) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(240 10% 8%) 0%, hsl(240 8% 15%) 100%);
+
+    /* Dark shadows */
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.4);
+    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.7);
+    --shadow-hover: 0 8px 40px rgba(0, 0, 0, 0.5);
+
+    /* Sidebar dark theme */
+    --sidebar-background: 240 10% 10%;
+    --sidebar-foreground: 36 39% 95%;
+    --sidebar-primary: 45 84% 35%;
+    --sidebar-primary-foreground: 240 10% 8%;
+    --sidebar-accent: 240 8% 18%;
+    --sidebar-accent-foreground: 36 39% 95%;
+    --sidebar-border: 240 8% 20%;
+    --sidebar-ring: 45 84% 65%;
+  }
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+    transition-property: background-color, color;
+    transition-duration: 300ms;
+    transition-timing-function: ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  /* Glass morphism card - theme aware */
+  .glass-card {
+    backdrop-filter: blur(16px);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 1rem;
+    transition-property: all;
+    transition-duration: 300ms;
+    background: hsl(var(--glass-bg));
+    border-color: hsl(var(--glass-border));
+    box-shadow: var(--shadow-glass);
+  }
+  
+  .dark .glass-card {
+    background: hsl(var(--card) / 0.7);
+    border-color: hsl(var(--border));
+  }
+
+  /* Premium button variants - theme aware */
+  .btn-premium {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 0.75rem;
+    font-weight: 500;
+    transition-property: all;
+    transition-duration: 300ms;
+    background: var(--gradient-primary);
+    color: hsl(var(--primary-foreground));
+    box-shadow: var(--shadow-soft);
+  }
+
+  .btn-premium:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .btn-glass {
+    backdrop-filter: blur(12px);
+    border-radius: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    transition-property: all;
+    transition-duration: 300ms;
+    background: hsl(var(--muted) / 0.3);
+    border: 1px solid hsl(var(--border));
+    color: hsl(var(--foreground));
+  }
+
+  .btn-glass:hover {
+    background: hsl(var(--muted) / 0.5);
+    border-color: hsl(var(--border));
+    transform: translateY(-1px);
+  }
+
+  /* Premium input styling - theme aware */
+  .input-premium {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-radius: 0.75rem;
+    transition: all 0.3s;
+    background: hsl(var(--card) / 0.5);
+    border: 1px solid hsl(var(--border));
+    color: hsl(var(--foreground));
+    backdrop-filter: blur(8px);
+  }
+
+  .input-premium:focus {
+    outline: none;
+    border-color: hsl(var(--ring));
+    box-shadow: 0 0 0 2px hsl(var(--ring) / 0.2);
+    transform: scale(1.02);
+  }
+  
+  .input-premium::placeholder {
+    color: hsl(var(--muted-foreground));
+  }
+
+  /* Society-themed gradients */
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-glass {
+    background: var(--gradient-glass);
+  }
+
+  /* Animations */
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-glass {
+    box-shadow: var(--shadow-glass);
+  }
+
+  /* Theme-aware utilities */
+  .bg-premium {
+    background: hsl(var(--background));
+  }
+
+  .text-premium {
+    color: hsl(var(--foreground));
+  }
+
+  .bg-card-premium {
+    background: hsl(var(--card));
+  }
+
+  .text-card-premium {
+    color: hsl(var(--card-foreground));
+  }
+
+  .bg-muted-premium {
+    background: hsl(var(--muted));
+  }
+
+  .text-muted-premium {
+    color: hsl(var(--muted-foreground));
+  }
+
+  /* Gradient backgrounds that work with both themes */
+  .bg-gradient-premium {
+    background: var(--gradient-primary);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  /* Special class for charcoal text that adapts to theme */
+  .text-charcoal {
+    color: hsl(var(--charcoal));
+  }
+
+  /* Smooth transitions for theme changes */
+  * {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
