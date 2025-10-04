@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, Query
 from typing import List, Optional
-from models import House, HouseCreate, HouseUpdate, HousesListResponse
-from database import db
+from ..models import House, HouseCreate, HouseUpdate, HousesListResponse
+from ..database import db
 import logging
 from datetime import datetime
 
