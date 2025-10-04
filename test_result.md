@@ -169,9 +169,9 @@
           comment: "❌ PARTIAL: GET /api/members works (200 OK, returns empty list). POST fails with 500 error due to missing 'members' table in Supabase AND datetime serialization issue. Two problems: 1) Missing table 2) JSON serialization of datetime objects."
 
   - task: "Implement Vehicles CRUD API endpoints"
-    implemented: false
-    working: "NA"
-    file: "backend/routes/vehicles.py"
+    implemented: true
+    working: false
+    file: "backend/server.py"
     stuck_count: 0
     priority: "high"
     needs_retesting: true
@@ -179,6 +179,9 @@
         - working: "NA"
           agent: "main"
           comment: "Vehicles API for managing registered vehicles"
+        - working: false
+          agent: "testing"
+          comment: "❌ PARTIAL: GET /api/vehicles works (200 OK, returns empty list). POST fails with 500 error due to missing 'vehicles' table in Supabase AND datetime serialization issue. Same issues as Members API."
 
   - task: "Implement Maintenance Payments CRUD API endpoints"
     implemented: false
