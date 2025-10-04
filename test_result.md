@@ -154,9 +154,9 @@
           comment: "❌ PARTIAL: GET /api/houses works (200 OK, returns empty list with summary). POST/PUT/DELETE fail with 500 errors due to missing 'houses' table in Supabase. API implementation is correct, blocked by database setup."
 
   - task: "Implement Members CRUD API endpoints"
-    implemented: false
-    working: "NA"
-    file: "backend/routes/members.py"
+    implemented: true
+    working: false
+    file: "backend/server.py"
     stuck_count: 0
     priority: "high"
     needs_retesting: true
@@ -164,6 +164,9 @@
         - working: "NA"
           agent: "main"
           comment: "Members API for managing society members"
+        - working: false
+          agent: "testing"
+          comment: "❌ PARTIAL: GET /api/members works (200 OK, returns empty list). POST fails with 500 error due to missing 'members' table in Supabase AND datetime serialization issue. Two problems: 1) Missing table 2) JSON serialization of datetime objects."
 
   - task: "Implement Vehicles CRUD API endpoints"
     implemented: false
