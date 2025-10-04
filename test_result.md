@@ -234,10 +234,9 @@
 
 ## test_plan:
   current_focus:
-    - "Setup Supabase database connection"
     - "Create database tables/schema for all models"
-    - "Implement Houses CRUD API endpoints"
-  stuck_tasks: []
+  stuck_tasks: 
+    - "Create database tables/schema for all models"
   test_all: false
   test_priority: "high_first"
 
