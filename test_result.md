@@ -139,9 +139,9 @@
           comment: "❌ CRITICAL: Database tables missing in Supabase. All tables (houses, members, vehicles, maintenance_payments, expenditures) return 404 'table not found' errors. Setup script exists but fails due to missing exec_sql RPC function in Supabase. Tables must be created manually in Supabase dashboard or via alternative method."
 
   - task: "Implement Houses CRUD API endpoints"
-    implemented: false
-    working: "NA"
-    file: "backend/routes/houses.py"
+    implemented: true
+    working: false
+    file: "backend/server.py"
     stuck_count: 0
     priority: "high"
     needs_retesting: true
@@ -149,6 +149,9 @@
         - working: "NA"
           agent: "main"
           comment: "Houses API for creating, reading, updating, deleting houses"
+        - working: false
+          agent: "testing"
+          comment: "❌ PARTIAL: GET /api/houses works (200 OK, returns empty list with summary). POST/PUT/DELETE fail with 500 errors due to missing 'houses' table in Supabase. API implementation is correct, blocked by database setup."
 
   - task: "Implement Members CRUD API endpoints"
     implemented: false
