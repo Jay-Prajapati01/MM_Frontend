@@ -35,6 +35,8 @@ async def root():
 
 @api_router.get("/health")
 async def health_check():
+    # Initialize database connection
+    db = initialize_db()
     return {"status": "healthy", "database": "connected"}
 
 # Include all routers
