@@ -18,7 +18,7 @@ class House(BaseModel):
     membersCount: Optional[int] = 0
     vehiclesCount: Optional[int] = 0
     createdAt: str = Field(default_factory=get_current_timestamp)
-    updatedAt: datetime = Field(default_factory=datetime.utcnow)
+    updatedAt: str = Field(default_factory=get_current_timestamp)
 
 class HouseCreate(BaseModel):
     houseNo: str
@@ -48,7 +48,7 @@ class Member(BaseModel):
     email: Optional[str] = None
     status: str = "active"  # active, inactive
     createdAt: str = Field(default_factory=get_current_timestamp)
-    updatedAt: datetime = Field(default_factory=datetime.utcnow)
+    updatedAt: str = Field(default_factory=get_current_timestamp)
 
 class MemberCreate(BaseModel):
     name: str
@@ -79,7 +79,7 @@ class Vehicle(BaseModel):
     registrationDate: Optional[str] = None
     status: str = "active"  # active, inactive
     createdAt: str = Field(default_factory=get_current_timestamp)
-    updatedAt: datetime = Field(default_factory=datetime.utcnow)
+    updatedAt: str = Field(default_factory=get_current_timestamp)
 
 class VehicleCreate(BaseModel):
     number: str
