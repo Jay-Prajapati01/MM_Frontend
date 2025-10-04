@@ -17,7 +17,7 @@ class House(BaseModel):
     ownerName: Optional[str] = None
     membersCount: Optional[int] = 0
     vehiclesCount: Optional[int] = 0
-    createdAt: datetime = Field(default_factory=datetime.utcnow)
+    createdAt: str = Field(default_factory=get_current_timestamp)
     updatedAt: datetime = Field(default_factory=datetime.utcnow)
 
 class HouseCreate(BaseModel):
@@ -47,7 +47,7 @@ class Member(BaseModel):
     phone: str
     email: Optional[str] = None
     status: str = "active"  # active, inactive
-    createdAt: datetime = Field(default_factory=datetime.utcnow)
+    createdAt: str = Field(default_factory=get_current_timestamp)
     updatedAt: datetime = Field(default_factory=datetime.utcnow)
 
 class MemberCreate(BaseModel):
@@ -78,7 +78,7 @@ class Vehicle(BaseModel):
     house: str  # houseNo reference
     registrationDate: Optional[str] = None
     status: str = "active"  # active, inactive
-    createdAt: datetime = Field(default_factory=datetime.utcnow)
+    createdAt: str = Field(default_factory=get_current_timestamp)
     updatedAt: datetime = Field(default_factory=datetime.utcnow)
 
 class VehicleCreate(BaseModel):
@@ -120,7 +120,7 @@ class MaintenancePayment(BaseModel):
     status: str = "pending"  # pending, partial, paid, overdue
     method: Optional[str] = None
     remarks: Optional[str] = None
-    createdAt: datetime = Field(default_factory=datetime.utcnow)
+    createdAt: str = Field(default_factory=get_current_timestamp)
     updatedAt: Optional[datetime] = None
 
 class MaintenancePaymentCreate(BaseModel):
@@ -169,7 +169,7 @@ class Expenditure(BaseModel):
     description: Optional[str] = None
     attachmentName: Optional[str] = None
     attachmentData: Optional[str] = None  # base64 encoded
-    createdAt: datetime = Field(default_factory=datetime.utcnow)
+    createdAt: str = Field(default_factory=get_current_timestamp)
     updatedAt: Optional[datetime] = None
 
 class ExpenditureCreate(BaseModel):
