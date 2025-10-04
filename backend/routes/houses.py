@@ -22,6 +22,7 @@ async def get_houses(
 ):
     """Get all houses with pagination and summary"""
     try:
+        db = get_db()
         houses_data = db.get_houses(limit=1000)  # Get all for now
         houses = [House(**house) for house in houses_data]
         
