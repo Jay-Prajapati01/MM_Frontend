@@ -241,5 +241,11 @@ class SupabaseDB:
         result = self.supabase.table('expenditures').delete().eq('id', expenditure_id).execute()
         return len(result.data) > 0
 
-# Global database instance
-db = SupabaseDB()
+# Global database instance - will be initialized after env loading
+db = None
+
+def initialize_db():
+    global db
+    if db is None:
+        db = SupabaseDB()
+    return db
