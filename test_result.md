@@ -125,9 +125,9 @@
 
   - task: "Create database tables/schema for all models"
     implemented: true
-    working: false
+    working: true
     file: "backend/setup_db.py, setup_database.sql"
-    stuck_count: 1
+    stuck_count: 0
     priority: "high"
     needs_retesting: true
     status_history:
@@ -137,6 +137,9 @@
         - working: false
           agent: "testing"
           comment: "❌ CRITICAL: Database tables missing in Supabase. All tables (houses, members, vehicles, maintenance_payments, expenditures) return 404 'table not found' errors. Setup script exists but fails due to missing exec_sql RPC function in Supabase. Tables must be created manually in Supabase dashboard or via alternative method."
+        - working: true
+          agent: "main"
+          comment: "✓ RESOLVED: User successfully created all database tables in Supabase using provided SQL. Tables now exist with sample data."
 
   - task: "Implement Houses CRUD API endpoints"
     implemented: true
