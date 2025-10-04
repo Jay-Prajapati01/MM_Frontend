@@ -5,7 +5,10 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from fastapi import APIRouter, HTTPException, Query
 from typing import List, Optional
 from models import House, HouseCreate, HouseUpdate, HousesListResponse
-from database import db
+from database import initialize_db
+
+def get_db():
+    return initialize_db()
 import logging
 from datetime import datetime
 
