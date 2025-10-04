@@ -121,7 +121,7 @@ class MaintenancePayment(BaseModel):
     method: Optional[str] = None
     remarks: Optional[str] = None
     createdAt: str = Field(default_factory=get_current_timestamp)
-    updatedAt: Optional[datetime] = None
+    updatedAt: Optional[str] = None
 
 class MaintenancePaymentCreate(BaseModel):
     house: str
@@ -170,7 +170,7 @@ class Expenditure(BaseModel):
     attachmentName: Optional[str] = None
     attachmentData: Optional[str] = None  # base64 encoded
     createdAt: str = Field(default_factory=get_current_timestamp)
-    updatedAt: Optional[datetime] = None
+    updatedAt: Optional[str] = None
 
 class ExpenditureCreate(BaseModel):
     title: str
