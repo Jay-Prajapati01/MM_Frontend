@@ -12,8 +12,8 @@ from routes.vehicles import router as vehicles_router
 from routes.payments import router as payments_router
 from routes.expenditures import router as expenditures_router
 
-# Import database to ensure tables are created
-from database import db
+# Import database initialization
+from database import initialize_db
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
