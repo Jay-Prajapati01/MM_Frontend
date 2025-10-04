@@ -124,16 +124,19 @@
           comment: "✅ TESTED: Supabase connection working. Health endpoints (GET /api/ and GET /api/health) return 200 OK with proper responses. Database connectivity confirmed."
 
   - task: "Create database tables/schema for all models"
-    implemented: false
-    working: "NA"  
-    file: "backend/models.py"
-    stuck_count: 0
+    implemented: true
+    working: false
+    file: "backend/setup_db.py, setup_database.sql"
+    stuck_count: 1
     priority: "high"
     needs_retesting: true
     status_history:
         - working: "NA"
           agent: "main"
           comment: "Need to create tables for House, Member, Vehicle, MaintenancePayment, Expenditure"
+        - working: false
+          agent: "testing"
+          comment: "❌ CRITICAL: Database tables missing in Supabase. All tables (houses, members, vehicles, maintenance_payments, expenditures) return 404 'table not found' errors. Setup script exists but fails due to missing exec_sql RPC function in Supabase. Tables must be created manually in Supabase dashboard or via alternative method."
 
   - task: "Implement Houses CRUD API endpoints"
     implemented: false
