@@ -199,9 +199,9 @@
           comment: "❌ PARTIAL: GET /api/payments works (200 OK, returns empty list with detailed summary). POST fails with 500 error due to missing 'maintenance_payments' table in Supabase. API implementation is correct, blocked by database setup."
 
   - task: "Implement Expenditures CRUD API endpoints"
-    implemented: false
-    working: "NA"
-    file: "backend/routes/expenditures.py"
+    implemented: true
+    working: false
+    file: "backend/server.py"
     stuck_count: 0
     priority: "high"
     needs_retesting: true
@@ -209,6 +209,9 @@
         - working: "NA"
           agent: "main"
           comment: "Expenditures API for society expense tracking"
+        - working: false
+          agent: "testing"
+          comment: "❌ PARTIAL: GET /api/expenditures works (200 OK, returns empty list with detailed summary including category breakdown). POST fails with 500 error due to missing 'expenditures' table in Supabase. API implementation is correct, blocked by database setup."
 
 ## frontend:
   - task: "Update frontend to use real API calls"
