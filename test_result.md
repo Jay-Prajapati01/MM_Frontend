@@ -184,9 +184,9 @@
           comment: "❌ PARTIAL: GET /api/vehicles works (200 OK, returns empty list). POST fails with 500 error due to missing 'vehicles' table in Supabase AND datetime serialization issue. Same issues as Members API."
 
   - task: "Implement Maintenance Payments CRUD API endpoints"
-    implemented: false
-    working: "NA"
-    file: "backend/routes/payments.py"
+    implemented: true
+    working: false
+    file: "backend/server.py"
     stuck_count: 0
     priority: "high"
     needs_retesting: true
@@ -194,6 +194,9 @@
         - working: "NA"
           agent: "main"
           comment: "Payments API for maintenance fee collection and tracking"
+        - working: false
+          agent: "testing"
+          comment: "❌ PARTIAL: GET /api/payments works (200 OK, returns empty list with detailed summary). POST fails with 500 error due to missing 'maintenance_payments' table in Supabase. API implementation is correct, blocked by database setup."
 
   - task: "Implement Expenditures CRUD API endpoints"
     implemented: false
