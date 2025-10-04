@@ -3,6 +3,9 @@ from typing import Optional, List
 from datetime import datetime
 import uuid
 
+def get_current_timestamp():
+    return datetime.utcnow().isoformat() + 'Z'
+
 # Pydantic Models for API
 class House(BaseModel):
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
